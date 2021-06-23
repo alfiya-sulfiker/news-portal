@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { RetryInterceptor } from './core/interceptors/retry.interceptor';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -12,7 +13,8 @@ import { RetryInterceptor } from './core/interceptors/retry.interceptor';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule
   ],
   providers: [{provide: HTTP_INTERCEPTORS, useClass: RetryInterceptor, multi: true }],
   bootstrap: [AppComponent]

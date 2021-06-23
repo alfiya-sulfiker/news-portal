@@ -1,1 +1,30 @@
-<p>login works!</p>
+<mat-card class="login-card">
+    <mat-card-header class="login-header">
+        News Portal
+    </mat-card-header>
+    <form [formGroup]="loginForm">
+        <div>
+            <div class="col-md-12">
+                <mat-form-field appearance="standard">
+                    <mat-label>Email</mat-label>
+                    <input matInput formControlName="email" placeholder="Email">
+                </mat-form-field>
+                <mat-error *ngIf="loginForm.controls.email.touched && loginForm.controls.email.errors"
+                    class="validation-error">Required</mat-error>
+            </div>
+
+            <div class="col-md-12">
+                <mat-form-field appearance="standard">
+                    <mat-label>Password</mat-label>
+                    <input matInput formControlName="password" placeholder="Password" type="password">
+                </mat-form-field>
+                <mat-error *ngIf="loginForm.controls.password.touched && loginForm.controls.password.errors"
+                    class="validation-error">Required</mat-error>
+            </div>
+
+            <button mat-raised-button class="btn btn-primary" (click)="login()" [disabled]="loginForm.invalid">
+                Login </button>
+            <a routerLink="/auth/register" class="btn btn-link">Don't have an account? Sign Up!</a>
+        </div>
+    </form>
+</mat-card>
