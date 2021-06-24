@@ -5,7 +5,7 @@ import { environment } from "src/environments/environment";
 
 @Injectable()
 export class SectionsService {
-    apiKey = environment.apiKey;
+    apiKey = environment?.apiKey;
     constructor(private httpClient: HttpClient) {
 
     }
