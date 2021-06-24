@@ -10,12 +10,7 @@ import { AuthService } from '../auth.service';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
-
-  // constructor() { }
-
-  // ngOnInit(): void {
-  //   console.log("Dsdssds")
-  // }
+  
   loginForm: FormGroup;
   showErrorMsg: boolean;
   constructor(private authService: AuthService, private router: Router, private snackBar: MatSnackBar) { }

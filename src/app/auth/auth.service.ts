@@ -3,13 +3,12 @@ import { Router } from '@angular/router';
 
 import { Observable, of } from 'rxjs';
 import { tap, delay } from 'rxjs/operators';
-// import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root',
 })
 export class AuthService {
-  isLoggedIn = false;
+  isLoggedIn;
   users: Array<object> = [];
   constructor(private router: Router) {
   }
@@ -21,15 +20,13 @@ export class AuthService {
   login(userData): Observable<boolean> {
     const users = JSON.parse(localStorage.getItem('users'));
     const userPresent = users.find(user => user.email === userData.email && user.password === userData.password);
-    // if (userPresent) {
+
     this.isLoggedIn = userPresent;
     return of(this.isLoggedIn).pipe(
       delay(1000),
       tap(() =>
         this.isLoggedIn)
     );
-    // }
-    // return;
 
   }
 

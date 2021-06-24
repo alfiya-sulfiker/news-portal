@@ -1,0 +1,20 @@
+<p class="header-container">
+  <mat-toolbar>
+    <div >
+      <div>
+        <span class="header">News Portal</span>
+      </div>
+
+      <div *ngIf="isLoggedIn">
+        <a mat-button class="menu-button logout-btn" (click)="editProfile()" title="Edit Profile">
+          <mat-icon>supervisor_account</mat-icon>
+        </a>
+        <a mat-button class="menu-button logout-btn" (click)="logout()" title="Logout">
+          <mat-icon>logout</mat-icon>
+        </a>
+      </div>
+    </div>
+
+
+  </mat-toolbar>
+</p>

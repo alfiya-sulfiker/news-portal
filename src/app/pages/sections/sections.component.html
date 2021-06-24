@@ -1,0 +1,15 @@
+<mat-sidenav-container class="container">
+    
+    <mat-sidenav #sidenav mode="side" opened class="sidenav" [fixedInViewport]="false">
+        <a mat-button *ngFor="let section of sectionItems" class="menu-button"  routerLinkActive='active-item' (click)="goToSection(section)">
+            <span>{{section?.display_name}}</span>
+        </a>
+        <mat-divider></mat-divider>
+    </mat-sidenav>
+
+    <mat-sidenav-content>
+        <div class="content mat-elevation-z8">
+            <app-articles [section]="section"></app-articles>
+        </div>
+    </mat-sidenav-content>
+</mat-sidenav-container>
